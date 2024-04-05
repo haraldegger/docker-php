@@ -32,14 +32,14 @@ This service is thought to be working hand in hand with a reverse proxy server, 
 All scripts and data and everything is saved in the /srv/ folder. If you want to backup or restore your data, everything you need to care about is in the /srv/data/ folder.\
 \
 **Use the following script to create the docker container:**\
-docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e MY_USERNAME="*USERNAME*" -e MY_PASSWORD="*PASSWORD*" -e MY_PACKAGES="*PACKAGES*" he.docker-php\
+docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e MY_USERNAME="*USERNAME*" -e MY_PASSWORD="*PASSWORD*" -e MY_PACKAGES="*PACKAGES*" haraldegger/docker-php\
 - *NAME*: Name of the instance, we suggest to use the name of the domain, f.ex. github.com
 - *HTTPSPORT*: Port through which your webserver is reached with the https protocoll, f.ex. 10443
 - *SFTPPORT*: Port through which you can connect via SFTP, you need to provide this port only when you want to access your files, f.ex. 10022
 - *USERNAME*: Username for the SFTP connection, we recommend to not use an easy to guess user, f.ex. jamesbond006
 - *PASSWORD*: Password for the SFTP connection, we commend a very secure password, f.ex. 5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<
 - *PACKAGES*: You can specify additional packages, which you want to have installed and we did not forsee, most of the time you will not need this, f.ex. php8.2-sqlite3
-- Summarizing the above you will get the following command: *docker run --name github.com --restart=always -p 10443:443 -p 10022:22 -e MY_USERNAME="jamesbond006" -e MY_PASSWORD="5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<" -e MY_PACKAGES="php8.2-sqlite3" he.docker-php\*
+- Summarizing the above you will get the following command: *docker run --name github.com --restart=always -p 10443:443 -p 10022:22 -e MY_USERNAME="jamesbond006" -e MY_PASSWORD="5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<" -e MY_PACKAGES="php8.2-sqlite3" haraldegger/docker-php\*
 **Internal data structure**
 As mentioned before, everyhing we need we can find in the /srv/ directory:\
 - You are only able to access this folder from SFTP.
