@@ -1,16 +1,16 @@
 #!/bin/sh
 #-------------------------------------------------------------------------#
-if [ ! -f "/srv/data/001-prepare.sh.done" ]; then
+if [ -z ${DONE_001_PREPARE+x} ]; then
   echo "/srv/bin/001-prepare.sh"
   /srv/bin/001-prepare.sh
-  cp /srv/bin/001-prepare.sh /srv/data/001-prepare.sh.done
+  export DONE_001_PREPARE=done
   exit
 fi
 #-------------------------------------------------------------------------#
-if [ ! -f "/srv/data/002-setup.sh.done" ]; then
+if [ -z ${DONE_002_SETUP+x} ]; then
   echo "/srv/bin/002-setup.sh"
   /srv/bin/002-setup.sh
-  cp /srv/bin/002-setup.sh /srv/data/002-setup.sh.done
+  export DONE_002_SETUP=done
   exit
 fi
 #-------------------------------------------------------------------------#
