@@ -1,16 +1,16 @@
 #!/bin/sh
 #-------------------------------------------------------------------------#
-if [ -z ${DONE_001_PREPARE+x} ]; then
+if [ ! -f "/srv/bin/001-prepare.done" ]; then
   echo "/srv/bin/001-prepare.sh"
   /srv/bin/001-prepare.sh
-  export DONE_001_PREPARE=done
+  echo "done" > /srv/bin/001-prepare.done 
   exit
 fi
 #-------------------------------------------------------------------------#
-if [ -z ${DONE_002_SETUP+x} ]; then
+if [ ! -f "/srv/bin/002-setup.done" ]; then
   echo "/srv/bin/002-setup.sh"
   /srv/bin/002-setup.sh
-  export DONE_002_SETUP=done
+  echo "done" > /srv/bin/002-setup.done 
   exit
 fi
 #-------------------------------------------------------------------------#
