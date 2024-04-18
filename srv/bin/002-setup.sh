@@ -33,6 +33,13 @@ echo "Setting up folder rights..."
 chmod -R 775 /srv/*
 chmod 755 /srv/
 #-------------------------------------------------------------------------#
+echo "Setting up php fpm..."
+echo "[global]" > /etc/php/8.2/fpm/php-fpm.conf
+echo "pid = /run/php/php8.2-fpm.pid" >> /etc/php/8.2/fpm/php-fpm.conf
+echo "error_log = /srv/data/log/php-fpm.log" >> /etc/php/8.2/fpm/php-fpm.conf
+echo "include=/srv/cfg/php-fpm.conf" >> /etc/php/8.2/fpm/php-fpm.conf
+echo "include=/srv/data/cfg/php-fpm.conf" >> /etc/php/8.2/fpm/php-fpm.conf
+#-------------------------------------------------------------------------#
 echo "Setting up SFTP for file transfer..."
 mkdir /run/sshd
 echo "Port 22" > /etc/ssh/sshd_config
