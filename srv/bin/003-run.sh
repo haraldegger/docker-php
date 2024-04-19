@@ -34,7 +34,7 @@ else
     mkdir -p /var/run/apache2
     export APACHE_RUN_DIR=/var/run/apache2
     export APACHE_LOCK_DIR=/var/lock/apache2
-    if [ -f "/srv/data/cfg/apache2.cfg" ]; then
+    if [ -f "/srv/data/cfg/apache2.conf" ]; then
         apache2 -f /srv/data/cfg/apache2.conf -D FOREGROUND
     else
         apache2 -f /srv/cfg/apache2.conf -D FOREGROUND
