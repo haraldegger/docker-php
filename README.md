@@ -10,7 +10,7 @@ Why should I use it?
 ============
 There are already so many docker containers available, which offer similar functionalities and there exist even more providers which offer PHP as a service.\
 But: **Don't give away your freedom of such critical infrastructure!**\
-This might be the backbone of your online presence, **so don't make you depend on anyone!**\
+This might be the backbone of your online presence, **so don't make you depend on anyone!**
 - It is very simple, therefore easy to use and to maintain
 - It is extremly easy and fast to set up, you can expect to be ready in under 5 minutes.
 - Our project is open source, it uses very reliable software and it is licensed under the most permissive license
@@ -32,7 +32,7 @@ This service is thought to be working hand in hand with a reverse proxy server, 
 All scripts and data and everything is saved in the /srv/ folder. If you want to backup or restore your data, everything you need to care about is in the /srv/data/ folder.\
 \
 **Use the following script to create the docker container:**\
-docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e MY_USERNAME="*USERNAME*" -e MY_PASSWORD="*PASSWORD*" -e MY_PACKAGES="*PACKAGES*" haraldegger/docker-php\
+docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e MY_USERNAME="*USERNAME*" -e MY_PASSWORD="*PASSWORD*" -e MY_PACKAGES="*PACKAGES*" haraldegger/docker-php
 - *NAME*: Name of the instance, we suggest to use the name of the domain, f.ex. github.com
 - *HTTPSPORT*: Port through which your webserver is reached with the https protocoll, f.ex. 10443
 - *SFTPPORT*: Port through which you can connect via SFTP, you need to provide this port only when you want to access your files, f.ex. 10022
@@ -41,9 +41,10 @@ docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e
 - *PACKAGES*: You can specify additional packages, which you want to have installed and we did not forsee, most of the time you will not need this, f.ex. php8.2-sqlite3
 - To use apache2 server instead of the default nginx server, use the env parameter USE_APACHE="true".
 - It is absolutely not recommended, but you can switch from the latest PHP version (8.2) to use either PHP 7 (7.4) or even worse PHP 5 (5.6). Do use them use the env parameter USE_PHP7="true" or USE_PHP5="true". These older PHP versions are not part of the container, they are downloaded when requested from sury.org.
-- Summarizing the above you will get the following command: *docker run --name github.com --restart=always -p 10443:443 -p 10022:22 -e MY_USERNAME="jamesbond006" -e MY_PASSWORD="5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<" -e MY_PACKAGES="php8.2-sqlite3" haraldegger/docker-php\*
-**Internal data structure**
-As mentioned before, everyhing we need we can find in the /srv/ directory:\
+- Summarizing the above you will get the following command: *docker run --name github.com --restart=always -p 10443:443 -p 10022:22 -e MY_USERNAME="jamesbond006" -e MY_PASSWORD="5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<" -e MY_PACKAGES="php8.2-sqlite3" haraldegger/docker-php*
+
+**Internal data structure**\
+As mentioned before, everyhing we need we can find in the /srv/ directory:
 - You are only able to access this folder from SFTP.
 - */srv/bin/*: This folder contains the shell scripts, which make this service work
 - */srv/data/*: This folder contains all your configuration and data, all you need you will find here
