@@ -10,5 +10,6 @@ apt-get -y install php8.2-fpm
 apt-get -y install openssl
 apt-get -y install openssh-server
 apt-get -y install cron
+apt-get -y install wget
 apt-get -y install nano #for convenience, when manually interventing on the system
 #-------------------------------------------------------------------------#
