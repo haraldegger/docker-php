@@ -40,7 +40,7 @@ docker run --name *NAME* --restart=always -p *HTTPSPORT*:443 -p *SFTPPORT*:22 -e
 - *PASSWORD*: Password for the SFTP connection, we commend a very secure password, f.ex. 5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<
 - *PACKAGES*: You can specify additional packages, which you want to have installed and we did not forsee, most of the time you will not need this, f.ex. php8.2-sqlite3
 - To use apache2 server instead of the default nginx server, use the env parameter USE_APACHE="true".
-- It is absolutely not recommended, but you can switch from the latest PHP version (8.2) to use either PHP 7 (7.4) or even worse PHP 5 (5.6). Do use them use the env parameter USE_PHP7="true" or USE_PHP5="true". These older PHP versions are not part of the container, they are downloaded when requested from sury.org.
+- It is absolutely not recommended, but you can switch from the latest PHP version (8.2) to use either PHP 7 (7.4) or even worse PHP 5 (5.6). Do use them use the env parameter USE_PHP7="true" or USE_PHP5="true". These older PHP versions are not part of the container, they are downloaded when requested from sury.org. If you want to use PHP8 forever then use the USE_PHP8="true" parameter. It is not yet implement, but once there will be a new PHP version we will update to it and support PHP8 for backward compatibility.
 - Summarizing the above you will get the following command: *docker run --name github.com --restart=always -p 10443:443 -p 10022:22 -e MY_USERNAME="jamesbond006" -e MY_PASSWORD="5RL8~BaJCjw}bW48LL7,wM;P4b7z[7)D,bWctj$0g-y.qN>K,<" -e MY_PACKAGES="php8.2-sqlite3" haraldegger/docker-php*
 
 **Internal data structure**\
